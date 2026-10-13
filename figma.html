@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#16284A">
+  <title>Arro · all screens for Figma</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Lay every screen out as a fixed-size phone frame, side by side. */
+    body { background: #E4E1DA; margin: 0; }
+    /* Three across fits the plugin's 1440px desktop width. */
+    .board { display: grid; grid-template-columns: repeat(3, 390px); gap: 64px 56px; padding: 64px 56px; width: max-content; }
+    .frame { margin: 0; }
+    .frame figcaption { font: 600 14px/1 Figtree, sans-serif; color: #4A5263; margin-bottom: 12px; }
+    .frame .app { width: 390px; max-width: none; height: 844px; min-height: 0; margin: 0; overflow: hidden; transform: translateZ(0); }
+    .frame .screen { min-height: 844px; animation: none; }
+    .frame .discover { height: 844px; min-height: 0; }
+    .frame .tabbar, .frame .place-top { position: absolute; }
+    .frame * { animation: none !important; transition: none !important; }
+  </style>
+</head>
+<body>
+  <div class="board">
+<figure class="frame"><figcaption>1 Splash</figcaption><main class="app" data-name="1 Splash"><section class="screen splash active" data-screen="splash" aria-label="Arro">
+      <button class="splash-tap" data-go="welcome" aria-label="Tap to continue">
+        <span class="splash-rings" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span class="splash-center">
+          <span class="wordmark">a<span class="rr">rr</span>o</span>
+          <span class="splash-tagline">Uninsured, not out of options.</span>
+        </span>
+        <span class="splash-hint">Tap to continue</span>
+      </button>
+    </section></main></figure>
+<figure class="frame"><figcaption>2 Welcome</figcaption><main class="app" data-name="2 Welcome"><section class="screen welcome active" data-screen="welcome" aria-label="Welcome">
+      <div class="welcome-map" aria-hidden="true">
+        <svg class="map-svg" viewBox="0 0 390 515" preserveAspectRatio="xMidYMid slice">
+          <g fill="none" stroke="#E7E2D8" stroke-width="14">
+            <path d="M110 -10 V530"></path>
+            <path d="M285 -10 C282 120, 290 220, 296 530"></path>
+            <path d="M-10 168 H400"></path>
+            <path d="M-10 325 C120 318, 260 315, 400 300"></path>
+          </g>
+          <path class="route" d="M80 368 C110 340, 120 300, 150 270 S 240 240, 274 196" fill="none" stroke="#FF9A7F" stroke-width="5.5" stroke-linecap="round" stroke-dasharray="0 10"></path>
+          <circle cx="70" cy="378" r="12" fill="#FFFFFF" stroke="#16284A" stroke-width="4"></circle>
+        </svg>
+        <div class="float-card welcome-card">
+          <span class="chip">Best match</span>
+          <span class="welcome-card-type">Community health center</span>
+          <span class="welcome-card-price">$0–30</span>
+        </div>
+        <div class="float-pill welcome-distance">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"></path><circle cx="12" cy="9.5" r="2.5"></circle></svg>
+          4.2 mi away
+        </div>
+      </div>
+      <button class="pill-light skip-pill" data-go="need">Skip</button>
+      <div class="welcome-panel">
+        <h1 class="welcome-title">Uninsured, not out of options.</h1>
+        <p class="welcome-copy">Find affordable care near you and see what you'll likely pay before you walk in.</p>
+        <div class="page-dots" aria-hidden="true"><i class="on"></i><i></i><i></i></div>
+        <button class="btn btn-paper" data-go="need">
+          Get started
+          <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+        </button>
+      </div>
+    </section></main></figure>
+<figure class="frame"><figcaption>3 What do you need</figcaption><main class="app" data-name="3 What do you need"><section class="screen onboard active" data-screen="need" aria-label="What do you need help with?">
+      <header class="onboard-top">
+        <button class="back-btn" data-go="welcome" aria-label="Back">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"></path></svg>
+        </button>
+        <div class="progress" aria-hidden="true"><i class="on"></i><i></i></div>
+        <span class="step">1 of 2</span>
+      </header>
+      <h1 class="title">What do you need help with?</h1>
+      <p class="lede">Pick one or search. We'll match you with the most affordable places nearby.</p>
+
+      <label class="search">
+        <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"></circle><path d="M20 20l-4.2-4.2"></path></svg>
+        <input id="need-search" type="search" placeholder="Search, e.g. X-ray, birth control" autocomplete="off">
+      </label>
+
+      <div class="options" role="radiogroup" aria-label="Type of care" id="need-options">
+        <button class="option" role="radio" data-need="Teeth cleaning" data-keywords="dental dentist exam xray x-ray cleaning teeth" aria-checked="true">
+          <span class="option-icon"><svg class="icon" viewBox="0 0 24 24"><path d="M7.5 4c-2.3 0-3.8 1.9-3.5 4.5.3 2.3 1.3 3.7 1.8 6 .5 2.5.9 5.5 2.2 5.5 1.6 0 1.5-5 4-5s2.4 5 4 5c1.3 0 1.7-3 2.2-5.5.5-2.3 1.5-3.7 1.8-6C20.3 5.9 18.8 4 16.5 4 14.6 4 13.7 5 12 5S9.4 4 7.5 4Z"></path></svg></span>
+          <span class="option-text"><span class="option-title">Teeth cleaning</span><span class="option-sub">Exam, cleaning, X-rays</span></span>
+          <span class="radio" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 12.5l3.2 3.2L17 9"></path></svg></span>
+        </button>
+        <button class="option" role="radio" data-need="Tooth pain" data-keywords="dental dentist toothache chipped broken tooth pain" aria-checked="false">
+          <span class="option-icon"><svg class="icon" viewBox="0 0 24 24"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M5.6 5.6l2.8 2.8M15.6 15.6l2.8 2.8M5.6 18.4l2.8-2.8M15.6 8.4l2.8-2.8"></path></svg></span>
+          <span class="option-text"><span class="option-title">Tooth pain</span><span class="option-sub">Toothache, chipped or broken tooth</span></span>
+          <span class="radio" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 12.5l3.2 3.2L17 9"></path></svg></span>
+        </button>
+        <button class="option" role="radio" data-need="Sick visit" data-keywords="cold flu fever sore throat cough sick doctor" aria-checked="false">
+          <span class="option-icon"><svg class="icon" viewBox="0 0 24 24"><path d="M10 13.5V5a2 2 0 1 1 4 0v8.5a4 4 0 1 1-4 0Z"></path><path d="M12 17v-4"></path></svg></span>
+          <span class="option-text"><span class="option-title">Sick visit</span><span class="option-sub">Cold, flu, fever, sore throat</span></span>
+          <span class="radio" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 12.5l3.2 3.2L17 9"></path></svg></span>
+        </button>
+        <button class="option" role="radio" data-need="Cut or injury" data-keywords="stitches sprain burn cut injury wound" aria-checked="false">
+          <span class="option-icon"><svg class="icon" viewBox="0 0 24 24"><rect x="2.8" y="8.5" width="18.4" height="7" rx="3.5" transform="rotate(-45 12 12)"></rect><path d="M10.5 10.5l3 3"></path></svg></span>
+          <span class="option-text"><span class="option-title">Cut or injury</span><span class="option-sub">Stitches, sprains, burns</span></span>
+          <span class="radio" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 12.5l3.2 3.2L17 9"></path></svg></span>
+        </button>
+        <button class="option" role="radio" data-need="Lab test" data-keywords="bloodwork blood sti std strep test lab" aria-checked="false">
+          <span class="option-icon"><svg class="icon" viewBox="0 0 24 24"><path d="M9.5 3.5h5M10 3.5v6L5 18.5A1.5 1.5 0 0 0 6.3 20.5h11.4a1.5 1.5 0 0 0 1.3-2L14 9.5v-6"></path></svg></span>
+          <span class="option-text"><span class="option-title">Lab test</span><span class="option-sub">Bloodwork, STI or strep test</span></span>
+          <span class="radio" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 12.5l3.2 3.2L17 9"></path></svg></span>
+        </button>
+        <button class="option" role="radio" data-need="Prescription" data-keywords="refill medication medicine prescription birth control pill" aria-checked="false">
+          <span class="option-icon"><svg class="icon" viewBox="0 0 24 24"><rect x="2.5" y="8.5" width="19" height="7" rx="3.5" transform="rotate(-45 12 12)"></rect><path d="M9.5 9.5l5 5"></path></svg></span>
+          <span class="option-text"><span class="option-title">Prescription</span><span class="option-sub">Refill or new medication</span></span>
+          <span class="radio" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 12.5l3.2 3.2L17 9"></path></svg></span>
+        </button>
+        
+      </div>
+
+      <div class="actions">
+        <button class="btn btn-navy" id="need-continue" data-go="estimate">Continue</button>
+        <button class="btn btn-soft" data-go="estimate" data-skip-need="">Skip for now</button>
+      </div>
+      <a class="emergency" href="tel:911">
+        <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M12 7.5v5.5M12 16.3v.2"></path></svg>
+        <span><strong>Emergency?</strong> Call 911</span>
+      </a>
+    </section></main></figure>
+<figure class="frame"><figcaption>4 Estimate your cost</figcaption><main class="app" data-name="4 Estimate your cost"><section class="screen onboard active" data-screen="estimate" aria-label="Let's estimate your cost">
+      <header class="onboard-top">
+        <button class="back-btn" data-go="need" aria-label="Back">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"></path></svg>
+        </button>
+        <div class="progress" aria-hidden="true"><i class="on"></i><i class="on"></i></div>
+        <span class="step">2 of 2</span>
+      </header>
+      <h1 class="title">Let's estimate your cost</h1>
+      <p class="lede">Many clinics charge based on income. This lets us show your real price, not the sticker price.</p>
+
+      <p class="field-label" id="household-label">People in your household</p>
+      <div class="segmented" role="radiogroup" aria-labelledby="household-label" id="household">
+        <span class="seg-thumb" aria-hidden="true" style="transform: translateX(0%);"></span>
+        <button role="radio" data-value="1" aria-checked="true">1</button>
+        <button role="radio" data-value="2" aria-checked="false">2</button>
+        <button role="radio" data-value="3" aria-checked="false">3</button>
+        <button role="radio" data-value="4+" aria-checked="false">4+</button>
+      </div>
+
+      <p class="field-label" id="income-label">Yearly household income</p>
+      <div class="list-card" role="radiogroup" aria-labelledby="income-label" id="income">
+        <button role="radio" class="list-row" data-value="under-20" aria-checked="false">Under $20,000<svg class="check" viewBox="0 0 24 24"><path d="M5.5 12.5l4 4L18.5 7.5"></path></svg></button>
+        <button role="radio" class="list-row" data-value="20-35" aria-checked="true">$20,000 – $35,000<svg class="check" viewBox="0 0 24 24"><path d="M5.5 12.5l4 4L18.5 7.5"></path></svg></button>
+        <button role="radio" class="list-row" data-value="35-55" aria-checked="false">$35,000 – $55,000<svg class="check" viewBox="0 0 24 24"><path d="M5.5 12.5l4 4L18.5 7.5"></path></svg></button>
+        <button role="radio" class="list-row" data-value="over-55" aria-checked="false">Over $55,000<svg class="check" viewBox="0 0 24 24"><path d="M5.5 12.5l4 4L18.5 7.5"></path></svg></button>
+        <button role="radio" class="list-row" data-value="no-say" aria-checked="false">Prefer not to say<svg class="check" viewBox="0 0 24 24"><path d="M5.5 12.5l4 4L18.5 7.5"></path></svg></button>
+      </div>
+
+      <label class="toggle-card">
+        <span class="toggle-icon"><svg viewBox="0 0 24 24"><path d="M19.5 4.5 4.5 11l6.5 2.5 2.5 6.5Z"></path></svg></span>
+        <span class="toggle-text">Use my location</span>
+        <input type="checkbox" id="use-location" class="switch" role="switch">
+      </label>
+
+      <p class="privacy">
+        <svg class="icon" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2.5"></rect><path d="M8.5 10.5V7.5a3.5 3.5 0 0 1 7 0v3"></path></svg>
+        Stays on your phone. Never shared with clinics.
+      </p>
+
+      <div class="actions">
+        <button class="btn btn-navy" data-go="discover">
+          Show my matches
+          <svg class="icon coral" viewBox="0 0 24 24"><path d="M6 7l5 5-5 5M13 7l5 5-5 5"></path></svg>
+        </button>
+      </div>
+    </section></main></figure>
+<figure class="frame"><figcaption>5 Discover</figcaption><main class="app" data-name="5 Discover"><section class="screen tabbed discover active" data-screen="discover" aria-label="Discover">
+      <header class="disc-top">
+        <button class="disc-search" data-go="need" aria-label="Change what you need">
+          <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"></circle><path d="M20 20l-4.2-4.2"></path></svg>
+          <span class="disc-search-text"><span class="disc-need" id="disc-need">Teeth cleaning</span><span class="disc-count" id="disc-count">3 matches near you</span></span>
+        </button>
+        <button class="round-btn" id="view-toggle" aria-label="Show as list" aria-pressed="false">
+          <svg class="icon icon-list" viewBox="0 0 24 24"><path d="M9 6.5h11M9 12h11M9 17.5h11"></path><circle cx="4.5" cy="6.5" r=".6"></circle><circle cx="4.5" cy="12" r=".6"></circle><circle cx="4.5" cy="17.5" r=".6"></circle></svg>
+          
+        </button>
+        <button class="round-btn" data-go="saved" aria-label="Saved places">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.2a4.3 4.3 0 0 1 7.5 2.6C19.5 15.4 12 20 12 20Z"></path></svg>
+          
+        </button>
+      </header>
+      <div class="filters" role="radiogroup" aria-label="Sort matches" id="filters">
+        <button role="radio" data-sort="best" aria-checked="true">Best match</button>
+        <button role="radio" data-sort="cost" aria-checked="false">Lowest cost</button>
+        <button role="radio" data-sort="close" aria-checked="false">Closest</button>
+        <button role="radio" data-sort="open" aria-checked="false">Open now</button>
+      </div>
+
+      <div class="deck-wrap" id="deck-wrap">
+        <div class="deck" id="deck"><article class="card" data-id="1" aria-label="Community health center, [Clinic name], $0–30 estimated" aria-hidden="false" style="z-index: 4; opacity: 1;">
+    <div class="card-map"><svg viewBox="0 0 350 168" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <rect width="350" height="168" fill="var(--map)"></rect>
+    <g fill="none" stroke="var(--paper)" stroke-width="12">
+      <path d="M95 -10 V180"></path><path d="M262 -10 C264 60, 268 120, 272 180"></path>
+      <path d="M-10 62 H360"></path><path d="M-10 130 C110 126, 240 120, 360 114"></path>
+    </g>
+    <path d="M62 140 Q 162 130 262 58" fill="none" stroke="var(--coral)" stroke-width="5" stroke-linecap="round" stroke-dasharray="0 10"></path>
+    <circle cx="62" cy="140" r="8" fill="var(--card)" stroke="var(--navy)" stroke-width="3.5"></circle>
+    <circle cx="262" cy="58" r="17" fill="var(--navy)"></circle><circle cx="262" cy="58" r="6" fill="var(--coral)"></circle>
+  </svg>
+      <span class="rank-chip">1 of 3</span>
+      <span class="chip">Best match</span>
+    </div>
+    <div class="card-body">
+      <span class="eyebrow">Community health center</span>
+      <h2 class="card-name">[Clinic name]</h2>
+      <span class="card-meta">4.2 mi · Open until 6 PM</span>
+      <div class="price-box"><span class="price">$0–30</span><span class="price-note">est. out of pocket</span></div>
+      <ul class="facts"><li><svg class="" viewBox="0 0 24 24"><path d="M5.5 12.5l4 4L18.5 7.5"></path></svg>Sliding scale based on your income</li><li><svg class="" viewBox="0 0 24 24"><path d="M5.5 12.5l4 4L18.5 7.5"></path></svg>Can't turn you away for not being able to pay</li><li><svg class="" viewBox="0 0 24 24"><path d="M5.5 12.5l4 4L18.5 7.5"></path></svg>Next opening in about 2 weeks</li></ul>
+    </div>
+    <span class="swipe-label skip" style="opacity: 0;">Skip</span>
+    <span class="swipe-label open" style="opacity: 0;">Details</span>
+  </article><article class="card behind" data-id="2" aria-label="Dental school clinic, [School name] Dental Clinic, $40–90 estimated" aria-hidden="true" style="z-index: 3;">
+    <div class="card-map"><svg viewBox="0 0 350 168" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <rect width="350" height="168" fill="var(--map)"></rect>
+    <g fill="none" stroke="var(--paper)" stroke-width="12">
+      <path d="M95 -10 V180"></path><path d="M262 -10 C264 60, 268 120, 272 180"></path>
+      <path d="M-10 62 H360"></path><path d="M-10 130 C110 126, 240 120, 360 114"></path>
+    </g>
+    <path d="M50 120 Q 175 110 300 70" fill="none" stroke="var(--coral)" stroke-width="5" stroke-linecap="round" stroke-dasharray="0 10"></path>
+    <circle cx="50" cy="120" r="8" fill="var(--card)" stroke="var(--navy)" stroke-width="3.5"></circle>
+    <circle cx="300" cy="70" r="17" fill="var(--navy)"></circle><circle cx="300" cy="70" r="6" fill="var(--coral)"></circle>
+  </svg>
+      <span class="rank-chip">2 of 3</span>
+      <span class="chip">Low cost</span>
+    </div>
+    <div class="card-body">
+      <span class="eyebrow">Dental school clinic</span>
+      <h2 class="card-name">[School name] Dental Clinic</h2>
+      <span class="card-meta">11 mi · Open until 5 PM</span>
+      <div class="price-box"><span class="price">$40–90</span><span class="price-note">est. out of pocket</span></div>
+      <ul class="facts"><li><svg class="" viewBox="0 0 24 24"><path d="M5.5 12.5l4 4L18.5 7.5"></path></svg>Students supervised by licensed dentists</li><li><svg class="" viewBox="0 0 24 24"><path d="M5.5 12.5l4 4L18.5 7.5"></path></svg>Visits take 2–3 hours</li><li><svg class="" viewBox="0 0 24 24"><path d="M5.5 12.5l4 4L18.5 7.5"></path></svg>Waitlist about 1 week</li></ul>
+    </div>
+    <span class="swipe-label skip" style="opacity: 0;">Skip</span>
+    <span class="swipe-label open" style="opacity: 0;">Details</span>
+  </article></div>
+        <div class="deck-actions">
+          <button class="act act-skip" id="act-skip" aria-label="Skip"><svg class="icon" viewBox="0 0 24 24"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11"></path></svg></button>
+          <button class="act act-save" id="act-save" aria-label="Save"><svg class="icon fill" viewBox="0 0 24 24"><path d="M12 19.5s-7-4.3-7-9.6A4 4 0 0 1 12 7.6a4 4 0 0 1 7 2.3c0 5.3-7 9.6-7 9.6Z"></path></svg></button>
+          <button class="act act-open" id="act-open" aria-label="View details"><svg class="icon coral" viewBox="0 0 24 24"><path d="M6 7l5 5-5 5M13 7l5 5-5 5"></path></svg></button>
+        </div>
+        <p class="deck-hint">Swipe left to skip · right for details</p>
+      </div>
+
+      
+    </section>
+<nav class="tabbar" id="tabbar" aria-label="Main">
+      <button data-go="discover" data-tab="discover" aria-current="page"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M15.5 8.5l-2 5-5 2 2-5Z"></path></svg><span>Discover</span></button>
+      <button data-go="saved" data-tab="saved"><svg class="icon" viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.2a4.3 4.3 0 0 1 7.5 2.6C19.5 15.4 12 20 12 20Z"></path></svg></button>
+      <button data-go="rights" data-tab="rights"><svg class="icon" viewBox="0 0 24 24"><path d="M12 3.5l7 2.6v5.4c0 4.4-3 7.7-7 9-4-1.3-7-4.6-7-9V6.1Z"></path></svg></button>
+      <button data-go="profile" data-tab="profile"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.8"></circle><path d="M4.8 20c.8-3.6 3.7-5.5 7.2-5.5s6.4 1.9 7.2 5.5"></path></svg></button>
+    </nav></main></figure>
+<figure class="frame"><figcaption>6 Place details</figcaption><main class="app" data-name="6 Place details"><section class="screen place active" data-screen="place" aria-label="Place details">
+      <div class="place-map" aria-hidden="true">
+        <svg viewBox="0 0 390 300" preserveAspectRatio="xMidYMid slice">
+          <rect width="390" height="300" fill="var(--map)"></rect>
+          <g fill="none" stroke="var(--paper)" stroke-width="13">
+            <path d="M112 -10 V310"></path>
+            <path d="M285 -10 C288 100, 296 200, 300 310"></path>
+            <path d="M-10 102 H400"></path>
+            <path d="M-10 238 C120 232, 260 226, 400 218"></path>
+          </g>
+          <path d="M64 268 C120 220, 150 200, 200 175 S 250 140, 268 110" fill="none" stroke="var(--coral)" stroke-width="5.5" stroke-linecap="round" stroke-dasharray="0 10"></path>
+          <circle cx="62" cy="268" r="10" fill="var(--card)" stroke="var(--navy)" stroke-width="4"></circle>
+          <circle cx="268" cy="108" r="24" fill="var(--navy)"></circle>
+          <circle cx="268" cy="108" r="8" fill="var(--coral)"></circle>
+        </svg>
+      </div>
+      <div class="place-top">
+        <button class="round-btn" data-back="" aria-label="Back"><svg class="icon" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"></path></svg></button>
+        <span class="place-top-right">
+          <button class="round-btn" data-toast="Sharing comes later. This is a prototype." aria-label="Share"><svg class="icon" viewBox="0 0 24 24"><path d="M12 15V3.5M8 7.5l4-4 4 4M5.5 12v6.5a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2V12"></path></svg></button>
+          <button class="round-btn save-btn" id="place-save" aria-label="Save" aria-pressed="false"><svg class="icon fill" viewBox="0 0 24 24"><path d="M12 19.5s-7-4.3-7-9.6A4 4 0 0 1 12 7.6a4 4 0 0 1 7 2.3c0 5.3-7 9.6-7 9.6Z"></path></svg></button>
+        </span>
+      </div>
+      <div class="sheet" id="place-sheet">
+    <div class="sheet-head"><span class="eyebrow">Community health center</span><span class="chip">Best match</span></div>
+    <h1 class="sheet-name">[Clinic name]</h1>
+    <p class="sheet-meta">[Street address] · 4.2 mi · <strong>Open until 6 PM</strong></p>
+
+    <div class="tiles">
+      <button class="tile primary" data-toast="Calling is turned off in the prototype."><svg class="icon" viewBox="0 0 24 24"><path d="M5 4h3.5l1.8 4.5-2.3 1.4a11 11 0 0 0 6.1 6.1l1.4-2.3L20 15.5V19a1.5 1.5 0 0 1-1.6 1.5C10.6 20 4 13.4 3.5 5.6A1.5 1.5 0 0 1 5 4Z"></path></svg>Call</button>
+      <button class="tile" data-toast="Directions are coming later."><svg class="icon" viewBox="0 0 24 24"><path d="M20 4 4 10.5l7 2.5 2.5 7Z"></path></svg>Directions</button>
+      <button class="tile" data-toast="Clinic websites are coming later."><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"></circle><path d="M3.5 12h17M12 3.5c2.4 2.4 3.5 5.3 3.5 8.5s-1.1 6.1-3.5 8.5c-2.4-2.4-3.5-5.3-3.5-8.5s1.1-6.1 3.5-8.5Z"></path></svg>Website</button>
+      <button class="tile" data-toast="Booking is coming later."><svg class="icon" viewBox="0 0 24 24"><rect x="4" y="5.5" width="16" height="14.5" rx="2.5"></rect><path d="M4 10h16M8.5 3.5v4M15.5 3.5v4"></path></svg>Book</button>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><span>You'd pay</span><strong>$0–30</strong></div>
+      <div class="stat"><span>Distance</span><strong>4.2 mi</strong></div>
+      <div class="stat"><span>Next opening</span><strong>~2 wks</strong></div>
+    </div>
+
+    <h2 class="h2">Your estimated cost</h2>
+    <div class="list-card cost-list">
+      <div class="list-row"><span>Exam</span><span class="amt">$0 – $10</span></div><div class="list-row"><span>Cleaning</span><span class="amt">$0 – $15</span></div><div class="list-row"><span>X-rays<small>Only if they're due</small></span><span class="amt">$0 – $5</span></div>
+      <div class="list-row total"><span>Total</span><span class="amt">$0 – $30</span></div>
+    </div>
+    <p class="fine">Based on your income and this clinic's published sliding scale. Estimate, not a quote.</p>
+
+    <div class="script-card">
+      <div class="script-head"><span class="script-label">What to say when you call</span><button class="copy-btn" id="copy-script">Copy</button></div>
+      <p class="script-text" id="script-text">“Hi, I'm uninsured and need a cleaning. Can I be screened for your sliding fee scale, and when's your next new-patient opening?”</p>
+    </div>
+
+    <h2 class="h2">Bring with you</h2>
+    <div class="list-card bring">
+      <div class="list-row"><svg class="check on" viewBox="0 0 24 24"><path d="M5.5 12.5l4 4L18.5 7.5"></path></svg>Photo ID</div><div class="list-row"><svg class="check on" viewBox="0 0 24 24"><path d="M5.5 12.5l4 4L18.5 7.5"></path></svg>Proof of income</div><div class="list-row"><svg class="check on" viewBox="0 0 24 24"><path d="M5.5 12.5l4 4L18.5 7.5"></path></svg>Proof of address</div>
+    </div>
+
+    <button class="lock-row" data-go="rights">
+      <span class="lock-icon"><svg class="icon" viewBox="0 0 24 24"><path d="M12 3.5l7 2.6v5.4c0 4.4-3 7.7-7 9-4-1.3-7-4.6-7-9V6.1Z"></path></svg></span>
+      <span class="lock-text"><strong>Lock in your price</strong><span>Get a written Good Faith Estimate</span></span>
+      <svg class="icon" viewBox="0 0 24 24"><path d="M9.5 6l6 6-6 6"></path></svg>
+    </button></div>
+    </section></main></figure>
+<figure class="frame"><figcaption>7 Saved</figcaption><main class="app" data-name="7 Saved"><section class="screen tabbed page active" data-screen="saved" aria-label="Saved">
+      <h1 class="title">Saved</h1>
+      <p class="lede">Places you saved, in ranked order. Side-by-side compare is coming later.</p>
+      <div class="match-list" id="saved-list"><div class="empty">Nothing saved yet. Tap the heart on a place to keep it here.
+      <button class="btn btn-navy" data-go="discover">Find places</button></div></div>
+    </section>
+<nav class="tabbar" id="tabbar" aria-label="Main">
+      <button data-go="discover" data-tab="discover"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M15.5 8.5l-2 5-5 2 2-5Z"></path></svg></button>
+      <button data-go="saved" data-tab="saved" aria-current="page"><svg class="icon" viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.2a4.3 4.3 0 0 1 7.5 2.6C19.5 15.4 12 20 12 20Z"></path></svg><span>Saved</span></button>
+      <button data-go="rights" data-tab="rights"><svg class="icon" viewBox="0 0 24 24"><path d="M12 3.5l7 2.6v5.4c0 4.4-3 7.7-7 9-4-1.3-7-4.6-7-9V6.1Z"></path></svg></button>
+      <button data-go="profile" data-tab="profile"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.8"></circle><path d="M4.8 20c.8-3.6 3.7-5.5 7.2-5.5s6.4 1.9 7.2 5.5"></path></svg></button>
+    </nav></main></figure>
+<figure class="frame"><figcaption>8 Know your rights</figcaption><main class="app" data-name="8 Know your rights"><section class="screen tabbed page active" data-screen="rights" aria-label="Know your rights">
+      <h1 class="title">Know your rights</h1>
+      <p class="lede">If you don't have insurance, you have the right to know what care will cost before you get it.</p>
+      <div class="rights-card">
+        <span class="rights-icon"><svg class="icon" viewBox="0 0 24 24"><path d="M12 3.5l7 2.6v5.4c0 4.4-3 7.7-7 9-4-1.3-7-4.6-7-9V6.1Z"></path></svg></span>
+        <h2 class="h2">Get a Good Faith Estimate</h2>
+        <p>Under the No Surprises Act, if you're uninsured or paying yourself, providers must give you a written estimate when you book at least 3 business days ahead. You can also ask for one any time you're shopping around.</p>
+      </div>
+      <div class="list-card rights-list">
+        <div class="list-row"><svg class="check on" viewBox="0 0 24 24"><path d="M5.5 12.5l4 4L18.5 7.5"></path></svg><span>Ask for it in writing before your visit.</span></div>
+        <div class="list-row"><svg class="check on" viewBox="0 0 24 24"><path d="M5.5 12.5l4 4L18.5 7.5"></path></svg><span>Keep it. Compare it to your final bill.</span></div>
+        <div class="list-row"><svg class="check on" viewBox="0 0 24 24"><path d="M5.5 12.5l4 4L18.5 7.5"></path></svg><span>If your bill is $400 or more over the estimate, you can dispute it.</span></div>
+      </div>
+      <p class="fine">Prices in Arro are estimates, not quotes. A written Good Faith Estimate is the way to lock in your price.</p>
+    </section>
+<nav class="tabbar" id="tabbar" aria-label="Main">
+      <button data-go="discover" data-tab="discover"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M15.5 8.5l-2 5-5 2 2-5Z"></path></svg></button>
+      <button data-go="saved" data-tab="saved"><svg class="icon" viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.2a4.3 4.3 0 0 1 7.5 2.6C19.5 15.4 12 20 12 20Z"></path></svg></button>
+      <button data-go="rights" data-tab="rights" aria-current="page"><svg class="icon" viewBox="0 0 24 24"><path d="M12 3.5l7 2.6v5.4c0 4.4-3 7.7-7 9-4-1.3-7-4.6-7-9V6.1Z"></path></svg><span>Know your rights</span></button>
+      <button data-go="profile" data-tab="profile"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.8"></circle><path d="M4.8 20c.8-3.6 3.7-5.5 7.2-5.5s6.4 1.9 7.2 5.5"></path></svg></button>
+    </nav></main></figure>
+<figure class="frame"><figcaption>9 Profile</figcaption><main class="app" data-name="9 Profile"><section class="screen tabbed page active" data-screen="profile" aria-label="Profile">
+      <h1 class="title">Profile</h1>
+      <p class="lede">What you told us. It stays on this phone and is never shared with clinics.</p>
+      <div class="list-card summary" id="summary"><div class="list-row"><span>Need</span><span>Teeth cleaning</span></div><div class="list-row"><span>Household</span><span>1</span></div><div class="list-row"><span>Income</span><span>$20,000 – $35,000</span></div><div class="list-row"><span>Location</span><span>On</span></div></div>
+      <div class="actions">
+        <button class="btn btn-navy" data-go="need">Edit my answers</button>
+        <button class="btn btn-soft" id="clear-info">Clear my info</button>
+      </div>
+    </section>
+<nav class="tabbar" id="tabbar" aria-label="Main">
+      <button data-go="discover" data-tab="discover"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M15.5 8.5l-2 5-5 2 2-5Z"></path></svg></button>
+      <button data-go="saved" data-tab="saved"><svg class="icon" viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.2a4.3 4.3 0 0 1 7.5 2.6C19.5 15.4 12 20 12 20Z"></path></svg></button>
+      <button data-go="rights" data-tab="rights"><svg class="icon" viewBox="0 0 24 24"><path d="M12 3.5l7 2.6v5.4c0 4.4-3 7.7-7 9-4-1.3-7-4.6-7-9V6.1Z"></path></svg></button>
+      <button data-go="profile" data-tab="profile" aria-current="page"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.8"></circle><path d="M4.8 20c.8-3.6 3.7-5.5 7.2-5.5s6.4 1.9 7.2 5.5"></path></svg><span>Profile</span></button>
+    </nav></main></figure>
+  </div>
+</body>
+</html>
