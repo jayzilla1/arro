@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#16284A">
+  <title>Arro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main id="app" class="app">
+
+    <!-- 1 · Splash -->
+    <section class="screen splash" data-screen="splash" aria-label="Arro">
+      <button class="splash-tap" data-go="welcome" aria-label="Tap to continue">
+        <span class="splash-rings" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span class="splash-center">
+          <span class="wordmark">a<span class="rr">rr</span>o</span>
+          <span class="splash-tagline">Uninsured, not out of options.</span>
+        </span>
+        <span class="splash-hint">Tap to continue</span>
+      </button>
+    </section>
+
+    <!-- 2 · Welcome -->
+    <section class="screen welcome" data-screen="welcome" aria-label="Welcome">
+      <div class="welcome-map" aria-hidden="true">
+        <svg class="map-svg" viewBox="0 0 390 515" preserveAspectRatio="xMidYMid slice">
+          <g fill="none" stroke="#E7E2D8" stroke-width="14">
+            <path d="M110 -10 V530"/>
+            <path d="M285 -10 C282 120, 290 220, 296 530"/>
+            <path d="M-10 168 H400"/>
+            <path d="M-10 325 C120 318, 260 315, 400 300"/>
+          </g>
+          <path class="route" d="M80 368 C110 340, 120 300, 150 270 S 240 240, 274 196" fill="none" stroke="#FF9A7F" stroke-width="5.5" stroke-linecap="round" stroke-dasharray="0 10"/>
+          <circle cx="70" cy="378" r="12" fill="#FFFFFF" stroke="#16284A" stroke-width="4"/>
+        </svg>
+        <div class="float-card welcome-card">
+          <span class="chip">Best match</span>
+          <span class="welcome-card-type">Community health center</span>
+          <span class="welcome-card-price">$0–30</span>
+        </div>
+        <div class="float-pill welcome-distance">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+          4.2 mi away
+        </div>
+      </div>
+      <button class="pill-light skip-pill" data-go="need">Skip</button>
+      <div class="welcome-panel">
+        <h1 class="welcome-title">Uninsured, not out of options.</h1>
+        <p class="welcome-copy">Find affordable care near you and see what you'll likely pay before you walk in.</p>
+        <div class="page-dots" aria-hidden="true"><i class="on"></i><i></i><i></i></div>
+        <button class="btn btn-paper" data-go="need">
+          Get started
+          <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- 3 · What do you need? -->
+    <section class="screen onboard" data-screen="need" aria-label="What do you need help with?">
+      <header class="onboard-top">
+        <button class="back-btn" data-go="welcome" aria-label="Back">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg>
+        </button>
+        <div class="progress" aria-hidden="true"><i class="on"></i><i></i></div>
+        <span class="step">1 of 2</span>
+      </header>
+      <h1 class="title">What do you need help with?</h1>
+      <p class="lede">Pick one or search. We'll match you with the most affordable places nearby.</p>
+
+      <label class="search">
+        <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M20 20l-4.2-4.2"/></svg>
+        <input id="need-search" type="search" placeholder="Search, e.g. X-ray, birth control" autocomplete="off">
+      </label>
+
+      <div class="options" role="radiogroup" aria-label="Type of care" id="need-options">
+        <button class="option" role="radio" data-need="Teeth cleaning" data-keywords="dental dentist exam xray x-ray cleaning teeth">
+          <span class="option-icon"><svg class="icon" viewBox="0 0 24 24"><path d="M7.5 4c-2.3 0-3.8 1.9-3.5 4.5.3 2.3 1.3 3.7 1.8 6 .5 2.5.9 5.5 2.2 5.5 1.6 0 1.5-5 4-5s2.4 5 4 5c1.3 0 1.7-3 2.2-5.5.5-2.3 1.5-3.7 1.8-6C20.3 5.9 18.8 4 16.5 4 14.6 4 13.7 5 12 5S9.4 4 7.5 4Z"/></svg></span>
+          <span class="option-text"><span class="option-title">Teeth cleaning</span><span class="option-sub">Exam, cleaning, X-rays</span></span>
+          <span class="radio" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 12.5l3.2 3.2L17 9"/></svg></span>
+        </button>
+        <button class="option" role="radio" data-need="Tooth pain" data-keywords="dental dentist toothache chipped broken tooth pain">
+          <span class="option-icon"><svg class="icon" viewBox="0 0 24 24"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M5.6 5.6l2.8 2.8M15.6 15.6l2.8 2.8M5.6 18.4l2.8-2.8M15.6 8.4l2.8-2.8"/></svg></span>
+          <span class="option-text"><span class="option-title">Tooth pain</span><span class="option-sub">Toothache, chipped or broken tooth</span></span>
+          <span class="radio" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 12.5l3.2 3.2L17 9"/></svg></span>
+        </button>
+        <button class="option" role="radio" data-need="Sick visit" data-keywords="cold flu fever sore throat cough sick doctor">
+          <span class="option-icon"><svg class="icon" viewBox="0 0 24 24"><path d="M10 13.5V5a2 2 0 1 1 4 0v8.5a4 4 0 1 1-4 0Z"/><path d="M12 17v-4"/></svg></span>
+          <span class="option-text"><span class="option-title">Sick visit</span><span class="option-sub">Cold, flu, fever, sore throat</span></span>
+          <span class="radio" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 12.5l3.2 3.2L17 9"/></svg></span>
+        </button>
+        <button class="option" role="radio" data-need="Cut or injury" data-keywords="stitches sprain burn cut injury wound">
+          <span class="option-icon"><svg class="icon" viewBox="0 0 24 24"><rect x="2.8" y="8.5" width="18.4" height="7" rx="3.5" transform="rotate(-45 12 12)"/><path d="M10.5 10.5l3 3"/></svg></span>
+          <span class="option-text"><span class="option-title">Cut or injury</span><span class="option-sub">Stitches, sprains, burns</span></span>
+          <span class="radio" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 12.5l3.2 3.2L17 9"/></svg></span>
+        </button>
+        <button class="option" role="radio" data-need="Lab test" data-keywords="bloodwork blood sti std strep test lab">
+          <span class="option-icon"><svg class="icon" viewBox="0 0 24 24"><path d="M9.5 3.5h5M10 3.5v6L5 18.5A1.5 1.5 0 0 0 6.3 20.5h11.4a1.5 1.5 0 0 0 1.3-2L14 9.5v-6"/></svg></span>
+          <span class="option-text"><span class="option-title">Lab test</span><span class="option-sub">Bloodwork, STI or strep test</span></span>
+          <span class="radio" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 12.5l3.2 3.2L17 9"/></svg></span>
+        </button>
+        <button class="option" role="radio" data-need="Prescription" data-keywords="refill medication medicine prescription birth control pill">
+          <span class="option-icon"><svg class="icon" viewBox="0 0 24 24"><rect x="2.5" y="8.5" width="19" height="7" rx="3.5" transform="rotate(-45 12 12)"/><path d="M9.5 9.5l5 5"/></svg></span>
+          <span class="option-text"><span class="option-title">Prescription</span><span class="option-sub">Refill or new medication</span></span>
+          <span class="radio" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 12.5l3.2 3.2L17 9"/></svg></span>
+        </button>
+        <p class="no-results" hidden>No match for that yet. Try a simpler word, like "dental" or "test".</p>
+      </div>
+
+      <div class="actions">
+        <button class="btn btn-navy" id="need-continue" data-go="estimate">Continue</button>
+        <button class="btn btn-soft" data-go="estimate" data-skip-need>Skip for now</button>
+      </div>
+      <a class="emergency" href="tel:911">
+        <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7.5v5.5M12 16.3v.2"/></svg>
+        <span><strong>Emergency?</strong> Call 911</span>
+      </a>
+    </section>
+
+    <!-- 4 · Estimate your cost -->
+    <section class="screen onboard" data-screen="estimate" aria-label="Let's estimate your cost">
+      <header class="onboard-top">
+        <button class="back-btn" data-go="need" aria-label="Back">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg>
+        </button>
+        <div class="progress" aria-hidden="true"><i class="on"></i><i class="on"></i></div>
+        <span class="step">2 of 2</span>
+      </header>
+      <h1 class="title">Let's estimate your cost</h1>
+      <p class="lede">Many clinics charge based on income. This lets us show your real price, not the sticker price.</p>
+
+      <p class="field-label" id="household-label">People in your household</p>
+      <div class="segmented" role="radiogroup" aria-labelledby="household-label" id="household">
+        <span class="seg-thumb" aria-hidden="true"></span>
+        <button role="radio" data-value="1">1</button>
+        <button role="radio" data-value="2">2</button>
+        <button role="radio" data-value="3">3</button>
+        <button role="radio" data-value="4+">4+</button>
+      </div>
+
+      <p class="field-label" id="income-label">Yearly household income</p>
+      <div class="list-card" role="radiogroup" aria-labelledby="income-label" id="income">
+        <button role="radio" class="list-row" data-value="under-20">Under $20,000<svg class="check" viewBox="0 0 24 24"><path d="M5.5 12.5l4 4L18.5 7.5"/></svg></button>
+        <button role="radio" class="list-row" data-value="20-35">$20,000 – $35,000<svg class="check" viewBox="0 0 24 24"><path d="M5.5 12.5l4 4L18.5 7.5"/></svg></button>
+        <button role="radio" class="list-row" data-value="35-55">$35,000 – $55,000<svg class="check" viewBox="0 0 24 24"><path d="M5.5 12.5l4 4L18.5 7.5"/></svg></button>
+        <button role="radio" class="list-row" data-value="over-55">Over $55,000<svg class="check" viewBox="0 0 24 24"><path d="M5.5 12.5l4 4L18.5 7.5"/></svg></button>
+        <button role="radio" class="list-row" data-value="no-say">Prefer not to say<svg class="check" viewBox="0 0 24 24"><path d="M5.5 12.5l4 4L18.5 7.5"/></svg></button>
+      </div>
+
+      <label class="toggle-card">
+        <span class="toggle-icon"><svg viewBox="0 0 24 24"><path d="M19.5 4.5 4.5 11l6.5 2.5 2.5 6.5Z"/></svg></span>
+        <span class="toggle-text">Use my location</span>
+        <input type="checkbox" id="use-location" class="switch" role="switch">
+      </label>
+
+      <p class="privacy">
+        <svg class="icon" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2.5"/><path d="M8.5 10.5V7.5a3.5 3.5 0 0 1 7 0v3"/></svg>
+        Stays on your phone. Never shared with clinics.
+      </p>
+
+      <div class="actions">
+        <button class="btn btn-navy" data-go="discover">
+          Show my matches
+          <svg class="icon coral" viewBox="0 0 24 24"><path d="M6 7l5 5-5 5M13 7l5 5-5 5"/></svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- 5 · Discover -->
+    <section class="screen tabbed discover" data-screen="discover" aria-label="Discover">
+      <header class="disc-top">
+        <button class="disc-search" data-go="need" aria-label="Change what you need">
+          <svg class="icon"><use href="#i-search"/></svg>
+          <span class="disc-search-text"><span class="disc-need" id="disc-need">Teeth cleaning</span><span class="disc-count" id="disc-count">3 matches near you</span></span>
+        </button>
+        <button class="round-btn" id="view-toggle" aria-label="Show as list" aria-pressed="false">
+          <svg class="icon icon-list"><use href="#i-list"/></svg>
+          <svg class="icon icon-cards"><use href="#i-cards"/></svg>
+        </button>
+        <button class="round-btn" data-go="saved" aria-label="Saved places">
+          <svg class="icon"><use href="#i-heart"/></svg>
+          <span class="badge" id="saved-badge" hidden>0</span>
+        </button>
+      </header>
+      <div class="filters" role="radiogroup" aria-label="Sort matches" id="filters">
+        <button role="radio" data-sort="best">Best match</button>
+        <button role="radio" data-sort="cost">Lowest cost</button>
+        <button role="radio" data-sort="close">Closest</button>
+        <button role="radio" data-sort="open">Open now</button>
+      </div>
+
+      <div class="deck-wrap" id="deck-wrap">
+        <div class="deck" id="deck"></div>
+        <div class="deck-actions">
+          <button class="act act-skip" id="act-skip" aria-label="Skip"><svg class="icon"><use href="#i-x"/></svg></button>
+          <button class="act act-save" id="act-save" aria-label="Save"><svg class="icon fill"><use href="#i-heart-fill"/></svg></button>
+          <button class="act act-open" id="act-open" aria-label="View details"><svg class="icon coral"><use href="#i-chevrons"/></svg></button>
+        </div>
+        <p class="deck-hint">Swipe left to skip · right for details</p>
+      </div>
+
+      <div class="match-list" id="match-list" hidden></div>
+    </section>
+
+    <!-- 6 · Place details -->
+    <section class="screen place" data-screen="place" aria-label="Place details">
+      <div class="place-map" aria-hidden="true">
+        <svg viewBox="0 0 390 300" preserveAspectRatio="xMidYMid slice">
+          <rect width="390" height="300" fill="var(--map)"/>
+          <g fill="none" stroke="var(--paper)" stroke-width="13">
+            <path d="M112 -10 V310"/>
+            <path d="M285 -10 C288 100, 296 200, 300 310"/>
+            <path d="M-10 102 H400"/>
+            <path d="M-10 238 C120 232, 260 226, 400 218"/>
+          </g>
+          <path d="M64 268 C120 220, 150 200, 200 175 S 250 140, 268 110" fill="none" stroke="var(--coral)" stroke-width="5.5" stroke-linecap="round" stroke-dasharray="0 10"/>
+          <circle cx="62" cy="268" r="10" fill="var(--card)" stroke="var(--navy)" stroke-width="4"/>
+          <circle cx="268" cy="108" r="24" fill="var(--navy)"/>
+          <circle cx="268" cy="108" r="8" fill="var(--coral)"/>
+        </svg>
+      </div>
+      <div class="place-top">
+        <button class="round-btn" data-back aria-label="Back"><svg class="icon"><use href="#i-back"/></svg></button>
+        <span class="place-top-right">
+          <button class="round-btn" data-toast="Sharing comes later. This is a prototype." aria-label="Share"><svg class="icon"><use href="#i-share"/></svg></button>
+          <button class="round-btn save-btn" id="place-save" aria-label="Save" aria-pressed="false"><svg class="icon fill"><use href="#i-heart-fill"/></svg></button>
+        </span>
+      </div>
+      <div class="sheet" id="place-sheet"></div>
+    </section>
+
+    <!-- Saved -->
+    <section class="screen tabbed page" data-screen="saved" aria-label="Saved">
+      <h1 class="title">Saved</h1>
+      <p class="lede">Places you saved, in ranked order. Side-by-side compare is coming later.</p>
+      <div class="match-list" id="saved-list"></div>
+    </section>
+
+    <!-- Know your rights -->
+    <section class="screen tabbed page" data-screen="rights" aria-label="Know your rights">
+      <h1 class="title">Know your rights</h1>
+      <p class="lede">If you don't have insurance, you have the right to know what care will cost before you get it.</p>
+      <div class="rights-card">
+        <span class="rights-icon"><svg class="icon"><use href="#i-shield"/></svg></span>
+        <h2 class="h2">Get a Good Faith Estimate</h2>
+        <p>Under the No Surprises Act, if you're uninsured or paying yourself, providers must give you a written estimate when you book at least 3 business days ahead. You can also ask for one any time you're shopping around.</p>
+      </div>
+      <div class="list-card rights-list">
+        <div class="list-row"><svg class="check on"><use href="#i-check"/></svg><span>Ask for it in writing before your visit.</span></div>
+        <div class="list-row"><svg class="check on"><use href="#i-check"/></svg><span>Keep it. Compare it to your final bill.</span></div>
+        <div class="list-row"><svg class="check on"><use href="#i-check"/></svg><span>If your bill is $400 or more over the estimate, you can dispute it.</span></div>
+      </div>
+      <p class="fine">Prices in Arro are estimates, not quotes. A written Good Faith Estimate is the way to lock in your price.</p>
+    </section>
+
+    <!-- Profile -->
+    <section class="screen tabbed page" data-screen="profile" aria-label="Profile">
+      <h1 class="title">Profile</h1>
+      <p class="lede">What you told us. It stays on this phone and is never shared with clinics.</p>
+      <div class="list-card summary" id="summary"></div>
+      <div class="actions">
+        <button class="btn btn-navy" data-go="need">Edit my answers</button>
+        <button class="btn btn-soft" id="clear-info">Clear my info</button>
+      </div>
+    </section>
+
+    <!-- Floating tab bar -->
+    <nav class="tabbar" id="tabbar" aria-label="Main" hidden>
+      <button data-go="discover" data-tab="discover"><svg class="icon"><use href="#i-compass"/></svg><span>Discover</span></button>
+      <button data-go="saved" data-tab="saved"><svg class="icon"><use href="#i-heart"/></svg><span>Saved</span></button>
+      <button data-go="rights" data-tab="rights"><svg class="icon"><use href="#i-shield"/></svg><span>Know your rights</span></button>
+      <button data-go="profile" data-tab="profile"><svg class="icon"><use href="#i-user"/></svg><span>Profile</span></button>
+    </nav>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <!-- Line icons, 2px stroke -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+      <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M20 20l-4.2-4.2"/></symbol>
+      <symbol id="i-list" viewBox="0 0 24 24"><path d="M9 6.5h11M9 12h11M9 17.5h11"/><circle cx="4.5" cy="6.5" r=".6"/><circle cx="4.5" cy="12" r=".6"/><circle cx="4.5" cy="17.5" r=".6"/></symbol>
+      <symbol id="i-cards" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="16" rx="3"/></symbol>
+      <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.2a4.3 4.3 0 0 1 7.5 2.6C19.5 15.4 12 20 12 20Z"/></symbol>
+      <symbol id="i-heart-fill" viewBox="0 0 24 24"><path d="M12 19.5s-7-4.3-7-9.6A4 4 0 0 1 12 7.6a4 4 0 0 1 7 2.3c0 5.3-7 9.6-7 9.6Z"/></symbol>
+      <symbol id="i-x" viewBox="0 0 24 24"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11"/></symbol>
+      <symbol id="i-chevrons" viewBox="0 0 24 24"><path d="M6 7l5 5-5 5M13 7l5 5-5 5"/></symbol>
+      <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5Z"/></symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3.5l7 2.6v5.4c0 4.4-3 7.7-7 9-4-1.3-7-4.6-7-9V6.1Z"/></symbol>
+      <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.8"/><path d="M4.8 20c.8-3.6 3.7-5.5 7.2-5.5s6.4 1.9 7.2 5.5"/></symbol>
+      <symbol id="i-back" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></symbol>
+      <symbol id="i-share" viewBox="0 0 24 24"><path d="M12 15V3.5M8 7.5l4-4 4 4M5.5 12v6.5a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2V12"/></symbol>
+      <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h3.5l1.8 4.5-2.3 1.4a11 11 0 0 0 6.1 6.1l1.4-2.3L20 15.5V19a1.5 1.5 0 0 1-1.6 1.5C10.6 20 4 13.4 3.5 5.6A1.5 1.5 0 0 1 5 4Z"/></symbol>
+      <symbol id="i-nav" viewBox="0 0 24 24"><path d="M20 4 4 10.5l7 2.5 2.5 7Z"/></symbol>
+      <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.4 2.4 3.5 5.3 3.5 8.5s-1.1 6.1-3.5 8.5c-2.4-2.4-3.5-5.3-3.5-8.5s1.1-6.1 3.5-8.5Z"/></symbol>
+      <symbol id="i-cal" viewBox="0 0 24 24"><rect x="4" y="5.5" width="16" height="14.5" rx="2.5"/><path d="M4 10h16M8.5 3.5v4M15.5 3.5v4"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="M5.5 12.5l4 4L18.5 7.5"/></symbol>
+      <symbol id="i-chev" viewBox="0 0 24 24"><path d="M9.5 6l6 6-6 6"/></symbol>
+      <symbol id="i-redo" viewBox="0 0 24 24"><path d="M4.5 12a7.5 7.5 0 1 0 2.2-5.3L4.5 9"/><path d="M4.5 4.5V9H9"/></symbol>
+    </svg>
+
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
